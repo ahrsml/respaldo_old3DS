@@ -44,8 +44,8 @@ find "$repo/sd" -type f -size +50M -print -delete | sed 's|^|Muy grande, no se s
     for t in "$sd/Nintendo 3DS"/*/*/title/00040000/*; do
         [[ -d "$t" ]] || continue
         id="$(basename "$t")"
-        clave="0x$(echo "${id:2:5}" | tr a-f A-F)"
-        printf -- "- 00040000%s  %s  %s\n" "$id" "$(du -sh "$t" | cut -f1)" "${nombres[$clave]:-(sin nombre: no tiene respaldo en Checkpoint)}"
+        clave="0x$(echo "${id:1:5}" | tr a-f A-F)"
+        printf -- "- 00040000%s  %s  %s\n" "$id" "$(du -sh "$t" | cut -f1)" "${nombres[$clave]:-(sin nombre: sin respaldo en Checkpoint, o es una app)}"
     done
     for carpeta in nds gba dsi; do
         roms=$(find "$sd/roms/$carpeta" -maxdepth 1 -type f ! -name 'Place *' -printf '%f\n' 2>/dev/null | sort)
