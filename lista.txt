@@ -1,0 +1,23 @@
+# Rutas de la SD que se guardan, una por línea.
+# Las carpetas se copian enteras. Nunca agregues juegos, ROMs ni el
+# respaldo de la NAND: pesan demasiado para GitHub.
+
+# Partidas de juegos de 3DS (respaldadas con Checkpoint en la consola)
+3ds/Checkpoint/saves
+3ds/Checkpoint/extdata
+3ds/Checkpoint/config.json
+
+# Partidas de juegos de DS (TWiLight Menu)
+roms/nds/saves
+roms/dsi/saves
+
+# Configs
+luma/config.ini
+gm9/scripts
+_nds/TWiLightMenu/settings.ini
+_nds/TWiLightMenu/gamesettings
+_nds/nds-bootstrap.ini
+cheats
+
+# Capturas y videos de la cámara
+DCIM
